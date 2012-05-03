@@ -1,0 +1,33 @@
+<h1>Listing chamados</h1>
+
+<table>
+  <tr>
+    <th>Idsolicitante</th>
+    <th>Idproduto</th>
+    <th>Idpedido</th>
+    <th>Descricao</th>
+    <th>Tipochamado</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @chamados.each do |chamado| %>
+  <tr>
+    <td><%= chamado.idsolicitante %></td>
+    <td><%= chamado.idproduto %></td>
+    <td><%= chamado.idpedido %></td>
+    <td><%= chamado.descricao %></td>
+    <td><%= Chamado::CHAMADO_OPTIONS.invert[chamado.tipochamado] %></td>
+    <td><%= Chamado::STATUS_OPTIONS.invert[chamado.status] %></td>
+    <td><%= link_to 'Show', chamado %></td>
+    <td><%= link_to 'Edit', edit_chamado_path(chamado) %></td>
+    <td><%= link_to 'Destroy', chamado, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Chamado', new_chamado_path %>

@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Idsolicitante:</b>
+  <%= @chamado.idsolicitante %>
+</p>
+
+<p>
+  <b>Idproduto:</b>
+  <%= @chamado.idproduto %>
+</p>
+
+<p>
+  <b>Idpedido:</b>
+  <%= @chamado.idpedido %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @chamado.descricao %>
+</p>
+
+<p>
+  <b>Tipochamado:</b>
+  <%= Chamado::CHAMADO_OPTIONS.invert[@chamado.tipochamado] %>
+</p>
+
+<p>
+  <b>StatusChamado:</b>
+    <%= Chamado::STATUS_OPTIONS.invert[@chamado.status] %>
+</p>
+
+<br />
+<h2>Historico chamado</h2>
+
+<table>
+  <tr>
+    <th>TipoUsuario</th>
+    <th>Data</th>
+    <th>Alteracoes</th>
+  </tr>
+
+<% @audits.each do |a| %>
+  <tr>
+    <td><%= Audit::USER_OPTIONS.invert[a.tipousuario] %></td>
+    <td><%= a.created_at %></td>
+    <td><%= a.mudancas %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'Edit', edit_chamado_path(@chamado) %> |
+<%= link_to 'Back', chamados_path %>

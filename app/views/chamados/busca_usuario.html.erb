@@ -1,0 +1,23 @@
+<h1>Chamados</h1>
+
+<table>
+  <tr>
+    <th>Idproduto</th>
+    <th>Idpedido</th>
+    <th>Descricao</th>
+    <th>Tipochamado</th>
+    <th>Status</th>
+  </tr>
+
+<% @chamados.each do |chamado| %>
+  <tr>
+    <td><%= chamado.idproduto %></td>
+    <td><%= chamado.idpedido %></td>
+    <td><%= chamado.descricao %></td>
+    <td><%= Chamado::CHAMADO_OPTIONS.invert[chamado.tipochamado] %></td>
+    <td><%= Chamado::STATUS_OPTIONS.invert[chamado.status] %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
