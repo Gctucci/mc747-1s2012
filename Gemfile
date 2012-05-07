@@ -3,12 +3,13 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'heroku'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  #gem 'sqlite3', '1.3.5'
+  gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
   gem 'annotate', '~> 2.4.1.beta'
@@ -39,11 +40,11 @@ group :test do
    gem 'libnotify', '0.5.9'
 end
 
-#group :production do
-#  gem 'pg', '0.12.2'  
-#end
+group :production do
+  gem 'pg', '0.12.2'  
+end
 
-gem 'pg', '0.12.2'
+
 #Used to make javascript work ok
 gem 'therubyracer'
 
