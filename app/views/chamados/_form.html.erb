@@ -32,8 +32,7 @@
     <%= f.select :tipochamado, Chamado::CHAMADO_OPTIONS %>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
-    <%= f.select :status, Chamado::STATUS_OPTIONS %>
+    <%= f.hidden_field :status, :value => 1 %>
   </div>
   <div class="actions">
     <%= f.submit %>

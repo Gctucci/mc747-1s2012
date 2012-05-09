@@ -25,6 +25,8 @@ class Chamado < ActiveRecord::Base
   
   validates_inclusion_of :tipochamado, :in => CHAMADO_OPTIONS.values
   validates_inclusion_of :status, :in => STATUS_OPTIONS.values
+  validates :descricao, presence: true
+  validates :idsolicitante, presence: true
 
 
 end
