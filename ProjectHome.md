@@ -1,0 +1,1 @@
+Projeto de Engenharia de Software, desenvolvendo um componente e um portal de vendas para ilustrar o conceito de SOA
